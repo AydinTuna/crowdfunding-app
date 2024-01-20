@@ -1,49 +1,37 @@
+const fs = require("fs-extra");
+const solc = require("solc");
 
-const path = require("path")
-const solc = require("solc")
-const fs = require("fs-extra")
+async function main() {
+    // Load the contract source code
+    const sourceCode = await fs.readFile("ethereum/contracts/CrowdFund.sol", "utf8");
+    // Compile the source code and retrieve the ABI and Bytecode
+    const { abi, bytecode } = compile(sourceCode, "CrowdFund");
 
-// Delete previous build folder
-const buildPath = path.resolve(__dirname, "build");
-fs.removeSync(buildPath);
+    // Ensure that the "ethereum/build" directory exists
+    await fs.ensureDir("ethereum/build");
 
-// Read 'Campaign.sol' from the 'contract' folder
-const campaignPath = path.resolve(__dirname, "contracts", "Campaign.sol");
-const source = fs.readFileSync(campaignPath, "utf8");
+    // Store the ABI and Bytecode into a JSON file
+    const artifact = JSON.stringify({ abi, bytecode }, null, 2);
+    await fs.writeFile("ethereum/build/CrowdFund.json", artifact);
 
-const input = {
-    language: 'Solidity',
-    sources: {
-        'Campaign.sol': {
-            content: source
-        }
-    },
-    settings: {
-        outputSelection: {
-            '*': {
-                '*': ['*']
-            }
-        }
-    }
-};
-
-const output = JSON.parse(solc.compile(JSON.stringify(input)));
-console.log(output);
-// Compile both contracts with solidity compiler
-// `output` here contains the JSON output as specified in the documentation
-for (let contractName in output.contracts['Campaign.sol']) {
-    console.log(
-        contractName +
-        ': ' +
-        output.contracts['Campaign.sol'][contractName].evm.bytecode.object
-    );
+    console.log("Compilation and file writing completed successfully.");
 }
 
-// // Write output to the build directory
-// fs.ensureDirSync(buildPath);
-// for (let contract in output) {
-//     fs.outputJsonSync(
-//         path.resolve(buildPath, contract.replace(":", "") + ".json"),
-//         output[contract]
-//     );
-// }
+function compile(sourceCode, contractName) {
+    // Create the Solidity Compiler Standard Input and Output JSON
+    const input = {
+        language: "Solidity",
+        sources: { main: { content: sourceCode } },
+        settings: { outputSelection: { "*": { "*": ["abi", "evm.bytecode"] } } },
+    };
+    // Parse the compiler output to retrieve the ABI and Bytecode
+    const output = solc.compile(JSON.stringify(input));
+    const artifact = JSON.parse(output).contracts.main[contractName];
+
+    return {
+        abi: artifact.abi,
+        bytecode: artifact.evm.bytecode.object,
+    };
+}
+
+main();
