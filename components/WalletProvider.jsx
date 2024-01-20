@@ -8,6 +8,7 @@ import {
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import {
     mainnet,
+    goerli,
     polygon,
     optimism,
     arbitrum,
@@ -19,7 +20,7 @@ import { publicProvider } from 'wagmi/providers/public';
 
 function WalletProvider({ children }) {
     const { chains, publicClient } = configureChains(
-        [mainnet, polygon, optimism, arbitrum, base, zora],
+        [mainnet, goerli, polygon, optimism, arbitrum, base, zora],
         [
             alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
             publicProvider()
