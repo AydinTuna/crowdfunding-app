@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+.rdp {
+  margin: 0 !important;
+}
+.rdp-button:not([disabled]) {
+  margin: 1px;
+}
+
+
