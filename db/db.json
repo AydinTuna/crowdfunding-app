@@ -1,15 +1,23 @@
 {
    "0x8e4a6CaB4012739Daf4E047D04c47afE50C86B19": {
       "id": 11,
-      "title": "merhaba",
-      "shortDescription": "123",
+      "title": "asdfasdfsadf",
+      "shortDescription": "sadfasdfsadfsadf",
       "category": "Tech",
       "campaignDate": "2024-12-31",
       "campaignGoal": 0,
-      "campaignDescription": "merhaba. ben baho",
+      "campaignDescription": "qwefwefwef",
       "fileUrl": {},
       "totalBackers": 0,
-      "startDate": "1705843270",
-      "endDate": "1705943270"
+      "startDate": 1706130000,
+      "endDate": 1706562000,
+      "txReceipt": {
+         "messageHash": "0x2d5407a5c2efad15d53ef58fed7c8086e0fbdfa5425ee06950a663eecb7214e0",
+         "v": "0x2d",
+         "r": "0x67eea2a145a1fef4df93266ee718a0a74ad92937cbcedf5d3befd4d4653dc4bc",
+         "s": "0x15f9d6259783783384dac673977ce99b79c089d37843cf51771e830d6f733453",
+         "rawTransaction": "0xf8c61f81be830f424094daed111ee1d4ce87d306eac5614b98b980e6ac5980b8642c63f14600000000000000000000000000000000000000000000000000005af3107a40000000000000000000000000000000000000000000000000000000000065b17a500000000000000000000000000000000000000000000000000000000065b811d02da067eea2a145a1fef4df93266ee718a0a74ad92937cbcedf5d3befd4d4653dc4bca015f9d6259783783384dac673977ce99b79c089d37843cf51771e830d6f733453",
+         "transactionHash": "0xb1a9c90ebb337084def3fa8ea544360c17f88c44f8613d0b01e9faf30b1b18af"
+      }
    }
 }

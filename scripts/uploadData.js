@@ -24,8 +24,8 @@ const uploadData = async (formData) => {
         campaignDescription: formData.campaignDescription || 'Default Campaign Description',
         fileUrl: formData.fileUrl || '/uploads/default.jpg',
         totalBackers: defaultValues.totalBackers,
-        startDate: "1705843270",
-        endDate: "1705943270",
+        startDate: formData.startDate,
+        endDate: formData.endDate,
         txReceipt: formData.txReceipt
     };
 
