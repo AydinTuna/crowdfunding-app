@@ -13,7 +13,6 @@ const uploadData = async (formData) => {
     const defaultValues = {
         totalBackers: 0
     };
-    // Yeni kampanya verisini oluştur
     const newCampaign = {
 
         id: 11, // Mock data
@@ -24,12 +23,13 @@ const uploadData = async (formData) => {
         campaignGoal: parseInt(formData.campaignGoal) || 0,
         campaignDescription: formData.campaignDescription || 'Default Campaign Description',
         fileUrl: formData.fileUrl || '/uploads/default.jpg',
-        totalBackers: defaultValues.totalBackers
-
+        totalBackers: defaultValues.totalBackers,
+        startDate: "1705843270",
+        endDate: "1705943270",
+        txReceipt: formData.txReceipt
     };
 
     jsonData[formData.userAddress] = newCampaign
-    console.log(jsonData);
     const formattedJson = JSON.stringify(jsonData, null, 3);
 
 
