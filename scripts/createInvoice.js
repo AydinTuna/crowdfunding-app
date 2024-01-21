@@ -28,7 +28,6 @@ const dateToUnixTimestamp = (dateString) => {
 const createInvoice = async (formData, address) => {
     let signature
 
-    //Uniswap token address in mainnet
     const contractAddress = process.env.CROWDFUND_CONTRACT_ADDRESS
 
     //instantiate the contract
