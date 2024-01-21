@@ -35,6 +35,7 @@ export default function App() {
             mode="range"
             defaultMonth={pastMonth}
             selected={range}
+            max={90}
             footer={footer}
             onSelect={setRange}
             fromYear={new Date().getFullYear()}
