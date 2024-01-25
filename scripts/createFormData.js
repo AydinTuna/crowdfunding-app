@@ -25,7 +25,7 @@ const dateToUnixTimestamp = (dateString) => {
 }
 
 
-const createInvoice = async (formData, address) => {
+const createFormData = async (formData, address) => {
     let signature
 
     const contractAddress = process.env.CROWDFUND_CONTRACT_ADDRESS
@@ -48,7 +48,6 @@ const createInvoice = async (formData, address) => {
                 dateToUnixTimestamp(formData.get("dateTo"))).encodeABI()
         }
         signature = await web3.eth.accounts.signTransaction(tx, process.env.SIGNER_PRIVATE_KEY)
-        console.log("SIGNATURE", signature.transactionHash);
 
         web3.eth.sendSignedTransaction(signature.rawTransaction).on(
             "receipt", async () => {

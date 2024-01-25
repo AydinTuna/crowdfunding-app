@@ -1,23 +1,50 @@
 {
-   "0x8e4a6CaB4012739Daf4E047D04c47afE50C86B19": {
-      "id": 11,
-      "title": "asdfasdfsadf",
-      "shortDescription": "sadfasdfsadfsadf",
-      "category": "Tech",
-      "campaignDate": "2024-12-31",
-      "campaignGoal": 0,
-      "campaignDescription": "qwefwefwef",
-      "fileUrl": {},
-      "totalBackers": 0,
-      "startDate": 1706130000,
-      "endDate": 1706562000,
-      "txReceipt": {
-         "messageHash": "0x2d5407a5c2efad15d53ef58fed7c8086e0fbdfa5425ee06950a663eecb7214e0",
-         "v": "0x2d",
-         "r": "0x67eea2a145a1fef4df93266ee718a0a74ad92937cbcedf5d3befd4d4653dc4bc",
-         "s": "0x15f9d6259783783384dac673977ce99b79c089d37843cf51771e830d6f733453",
-         "rawTransaction": "0xf8c61f81be830f424094daed111ee1d4ce87d306eac5614b98b980e6ac5980b8642c63f14600000000000000000000000000000000000000000000000000005af3107a40000000000000000000000000000000000000000000000000000000000065b17a500000000000000000000000000000000000000000000000000000000065b811d02da067eea2a145a1fef4df93266ee718a0a74ad92937cbcedf5d3befd4d4653dc4bca015f9d6259783783384dac673977ce99b79c089d37843cf51771e830d6f733453",
-         "transactionHash": "0xb1a9c90ebb337084def3fa8ea544360c17f88c44f8613d0b01e9faf30b1b18af"
+   "campaigns": [
+      {
+         "id": 1,
+         "userAddress": "0x8e4a6CaB4012739Daf4E047D04c47afE50C86B19",
+         "title": "Video Game Campaign",
+         "shortDescription": "Adventure awaits in our new game!",
+         "category": "Video game",
+         "campaignDate": "2024-12-31",
+         "campaignGoal": 3,
+         "campaignDescription": "Embark on an unforgettable and epic gaming journey filled with thrilling adventures, challenging quests, and immersive experiences that will transport you to fantastical realms beyond your wildest imagination. Join our gaming community as we explore uncharted territories, battle formidable foes, and discover the boundless excitement that awaits you on this extraordinary gaming odyssey!",
+         "totalPledged": 123123,
+         "fileUrl": {},
+         "totalBackers": 0,
+         "startDate": 1706043600,
+         "endDate": 1706648400,
+         "txReceipt": {
+            "messageHash": "0xf7db56d87e32ab2357ab8bb2c5cc54a0600c9a4552fe7333a9de54375e6b3f1d",
+            "v": "0x2d",
+            "r": "0xbce472ac371650ad449ae0fb5d2f6ef9b681a2f4b3a87b351450016349b0815c",
+            "s": "0x27330cfcd5ba96ad849a6e6414e243a6293ae7d88a7dabb641dbd9bc876a2bd0",
+            "rawTransaction": "0xf8c5200e830f424094daed111ee1d4ce87d306eac5614b98b980e6ac5980b8642c63f14600000000000000000000000000000000000000000000000029a2241af62c00000000000000000000000000000000000000000000000000000000000065b028d00000000000000000000000000000000000000000000000000000000065b963502da0bce472ac371650ad449ae0fb5d2f6ef9b681a2f4b3a87b351450016349b0815ca027330cfcd5ba96ad849a6e6414e243a6293ae7d88a7dabb641dbd9bc876a2bd0",
+            "transactionHash": "0xe4819a290d9e063274a61f634ea68d82fe24f90dcdc882688a8fe02a6ef69a29"
+         }
+      },
+      {
+         "id": 2,
+         "userAddress": "undefined",
+         "title": "merhba",
+         "shortDescription": "asdasd",
+         "category": "Tech",
+         "campaignDate": "2024-12-31",
+         "campaignGoal": 0,
+         "campaignDescription": "awdasd",
+         "totalPledged": 234234,
+         "fileUrl": {},
+         "totalBackers": 0,
+         "startDate": 1707166800,
+         "endDate": 1708376400,
+         "txReceipt": {
+            "messageHash": "0x19bac106920c07c9bde0bdb9ea88b66a21d154b149f2af7dfd7bbf7826871896",
+            "v": "0x2d",
+            "r": "0xf43194c90c0915cd5a5a18e797e77e5df855d17e602c6737429810ce9ea12d21",
+            "s": "0x5406e762ba0e2b92c15563c17930d26f5658aed4193c9b80668aabbd8ebb4baf",
+            "rawTransaction": "0xf8c52111830f424094daed111ee1d4ce87d306eac5614b98b980e6ac5980b8642c63f14600000000000000000000000000000000000000000000000000005af3107a40000000000000000000000000000000000000000000000000000000000065c14c500000000000000000000000000000000000000000000000000000000065d3c1502da0f43194c90c0915cd5a5a18e797e77e5df855d17e602c6737429810ce9ea12d21a05406e762ba0e2b92c15563c17930d26f5658aed4193c9b80668aabbd8ebb4baf",
+            "transactionHash": "0x67626b050d0233767e94e39494f7826e046f98d9a1989500506159ed1848361a"
+         }
       }
-   }
+   ]
 }

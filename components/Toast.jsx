@@ -8,7 +8,7 @@ const notify = (message, type) => {
 function Toast({ message, type }) {
     return (
         <>
-            <button className="text-black bg-white w-full" onClick={() => notify(message, type)}>Make me a toast</button>
+            {/* <button className="text-black bg-white w-full" onClick={() => notify(message, type)}>Make me a toast</button> */}
             <Toaster position="bottom-right" reverseOrder={false} />
         </>
     );

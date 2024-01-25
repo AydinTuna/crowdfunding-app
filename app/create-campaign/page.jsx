@@ -1,7 +1,7 @@
 "use client"
 import CampaignForm from '@/components/CampaignForm'
 import Toast from '@/components/Toast'
-import createInvoice from '@/scripts/createInvoice'
+import createInvoice from '@/scripts/createFormData'
 
 function Page() {
     return (

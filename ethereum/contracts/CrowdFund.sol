@@ -22,27 +22,18 @@ contract CrowdFund {
     event Refund(uint id, address indexed caller, uint amount);
 
     struct Campaign {
-        // Creator of campaign
         address creator;
-        // Amount of tokens to raise
         uint goal;
-        // Total amount pledged
         uint pledged;
-        // Timestamp of start of campaign
         uint32 startAt;
-        // Timestamp of end of campaign
         uint32 endAt;
-        // True if goal was reached and creator has claimed the tokens.
         bool claimed;
     }
 
     IERC20 public immutable token;
-    // Total count of campaigns created.
-    // It is also used to generate id for new campaigns.
+
     uint public count;
-    // Mapping from id to Campaign
     mapping(uint => Campaign) public campaigns;
-    // Mapping from campaign id => pledger => amount pledged
     mapping(uint => mapping(address => uint)) public pledgedAmount;
 
     constructor(address _token) {

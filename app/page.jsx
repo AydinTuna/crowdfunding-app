@@ -1,22 +1,14 @@
-
-
-import Campaigns from "@/components/Campaigns";
+import PageContainer from "@/components/PageContainer";
 require('dotenv').config({ path: '.env.local' })
 const { Web3 } = require('web3');
 const fs = require("fs-extra");
+import { readJsonData } from "@/scripts/readJsonFile";
 
 
 
 export default async function Home() {
-  let jsonData
-  try {
-    const data = fs.readFileSync('db/db.json', 'utf-8');
-    jsonData = data.trim() === '' ? {} : JSON.parse(data);
-  } catch (error) {
-    console.error(`Error occurred while reading file: ${error}`);
-  }
-
-  console.log(jsonData);
+  let jsonData = readJsonData().campaigns
+  console.log("PAGE JSON DATA:", jsonData);
   function initialize() {
     const contractAddress = process.env.CROWDFUND_CONTRACT_ADDRESS
     const { abi } = JSON.parse(fs.readFileSync("ethereum/build/CrowdFund.json"));
@@ -35,13 +27,14 @@ export default async function Home() {
   const campaignCount = await getCampaignCount(contract)
   console.log("CAMPAIGN COUNT", campaignCount);
 
-  for (let i = 0; i < campaignCount; i++) {
-    return (
-      <main className="flex min-h-screen bg-white flex-col items-center justify-start">
-        <Campaigns jsonData={jsonData} />
-      </main>
-    )
-  }
+
+  return (
+    <>
+      {jsonData.map((campaign) => <PageContainer key={campaign.id} campaignData={campaign} />)}
+
+    </>
+  )
+
 
 
 }
