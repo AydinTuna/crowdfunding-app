@@ -8,7 +8,6 @@ import { readJsonData } from "@/scripts/readJsonFile";
 
 export default async function Home() {
   let jsonData = readJsonData().campaigns
-  console.log("PAGE JSON DATA:", jsonData);
   function initialize() {
     const contractAddress = process.env.CROWDFUND_CONTRACT_ADDRESS
     const { abi } = JSON.parse(fs.readFileSync("ethereum/build/CrowdFund.json"));
@@ -25,13 +24,11 @@ export default async function Home() {
     return count
   }
   const campaignCount = await getCampaignCount(contract)
-  console.log("CAMPAIGN COUNT", campaignCount);
 
 
   return (
     <>
       {jsonData.map((campaign) => <PageContainer key={campaign.id} campaignData={campaign} />)}
-
     </>
   )
 

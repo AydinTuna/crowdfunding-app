@@ -1,9 +1,14 @@
 "use client"
+import Link from 'next/link'
+import { useState } from 'react';
 
 function Campaigns({ campaignData }) {
+
+    const queryString = encodeURIComponent(JSON.stringify(campaignData))
+
     return (
-        <a href="/campaign-details" className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-12 mt-8 w-full">
-            <div href="/campaign-details">
+        <Link href={`/campaign-details?campaign=${queryString}`} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-12 mt-8 w-full">
+            <div>
                 <img className="rounded-t-lg" src="" alt="campaign image" />
             </div>
             <div className="p-5">
@@ -16,7 +21,7 @@ function Campaigns({ campaignData }) {
                 </div>
                 <p className="mb-3 font-medium text-gray-700 dark:text-gray-400 text-lg">{campaignData.endDate - campaignData.startDate} days left</p> {/* unix to utc */}
             </div>
-        </a>
+        </Link>
     )
 }
 

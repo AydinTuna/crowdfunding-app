@@ -9,6 +9,5 @@ export const readJsonData = () => {
     } catch (error) {
         console.error(`Error occurred while reading file: ${error}`);
     }
-    console.log("JSON DATA:", jsonData);
     return jsonData
 }
