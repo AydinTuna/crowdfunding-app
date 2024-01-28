@@ -3,12 +3,12 @@ import DatePicker from "./DatePicker"
 import { useAccount } from 'wagmi'
 
 
-function CampaignForm({ createInvoice }) {
+function CampaignForm({ createFormData }) {
     const { address } = useAccount()
 
     return (
         <>
-            <form action={async (e) => await createInvoice(e, address)} className="max-w-md mx-auto my-12 w-full">
+            <form action={async (e) => await createFormData(e, address)} className="max-w-md mx-auto my-12 w-full">
                 <div className="mb-10">
                     <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                     <input type="text" name="title" id="title" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter title" required />

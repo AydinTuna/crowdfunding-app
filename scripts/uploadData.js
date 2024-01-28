@@ -14,7 +14,7 @@ const uploadData = async (formData) => {
         totalBackers: 0
     };
     const newCampaign = {
-        id: jsonData.campaigns.length,
+        id: jsonData.campaigns.length + 1,
         userAddress: formData.userAddress || "",
         title: formData.title || 'Default Title',
         shortDescription: formData.shortDescription || 'Default Short Description',
@@ -23,7 +23,7 @@ const uploadData = async (formData) => {
         campaignGoal: parseInt(formData.campaignGoal) || 0,
         campaignDescription: formData.campaignDescription || 'Default Campaign Description',
         totalPledged: 0,
-        fileUrl: formData.fileUrl || '/uploads/default.jpg',
+        fileUrl: formData.fileUrl.name || '/uploads/default.jpg',
         totalBackers: defaultValues.totalBackers,
         startDate: formData.startDate,
         endDate: formData.endDate,

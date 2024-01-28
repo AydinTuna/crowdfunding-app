@@ -1,8 +1,24 @@
 "use client"
 import Link from 'next/link'
-import { useState } from 'react';
+const { Web3 } = require('web3');
+
+
+
 
 function Campaigns({ campaignData }) {
+    const web3 = new Web3(
+        `https://eth-${process.env.ETHEREUM_NETWORK}.g.alchemy.com/v2/${process.env.ALCHEMY_ID}`
+    )
+    const unixToDate = (unixTimestamp) => {
+        const date = new Date(unixTimestamp * 1000);
+        const day = ('0' + date.getDate()).slice(-2);
+        const formattedDate = day;
+        return formattedDate;
+    }
+
+    const totalPledgedEth = parseFloat(web3.utils.fromWei(campaignData.totalPledged, 'ether'))
+    const formattedTime = unixToDate(campaignData.endDate - campaignData.startDate)
+
 
     const queryString = encodeURIComponent(JSON.stringify(campaignData))
 
@@ -16,10 +32,10 @@ function Campaigns({ campaignData }) {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{campaignData.shortDescription}</p>
                 <p className="mb-3 font-medium text-gray-700 dark:text-gray-400 text-lg">{campaignData.category}</p>
                 <div className="mb-3 flex items-center justify-between text-gray-700 dark:text-gray-400 text-lg">
-                    <p className="font-medium">${campaignData.totalPledged} ETH raised</p> {/* wei to eth */}
-                    <p className="font-bold">100%</p>
+                    <p className="font-medium">${totalPledgedEth.toFixed(3)} ETH raised</p> {/* wei to eth */}
+                    {/* <p className="font-bold">100%</p> */}
                 </div>
-                <p className="mb-3 font-medium text-gray-700 dark:text-gray-400 text-lg">{campaignData.endDate - campaignData.startDate} days left</p> {/* unix to utc */}
+                <p className="mb-3 font-medium text-gray-700 dark:text-gray-400 text-lg">{formattedTime} days left</p> {/* unix to utc */}
             </div>
         </Link>
     )
