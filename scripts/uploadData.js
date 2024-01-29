@@ -41,6 +41,7 @@ const uploadData = async (formData) => {
         }
 
         console.log("data.json written correctly");
+        console.log("TX:", formData.txReceipt.transactionHash);
     });
 
 }
