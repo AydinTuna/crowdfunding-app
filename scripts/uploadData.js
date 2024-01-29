@@ -32,7 +32,6 @@ const uploadData = async (formData) => {
 
     jsonData.campaigns.push(newCampaign)
     const formattedJson = JSON.stringify(jsonData, null, 3);
-    console.log("TX:", formData.txReceipt.transactionHash);
 
     fs.writeFile("db/db.json", formattedJson, (error) => {
         if (error) {
