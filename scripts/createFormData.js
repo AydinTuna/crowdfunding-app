@@ -55,7 +55,6 @@ const createFormData = async (formData, address) => {
                 console.log(events);
             }
         ).on("error", async (err) => <Toast message={err.message} type={"error"} />)
-        console.log("FILE URL:", formData.get('fileUrl'));
         const rawFormData = {
             userAddress: address,
             title: formData.get('title'),
